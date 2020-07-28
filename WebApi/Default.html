@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Mantenimiento de Categorias</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/site.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/webApi.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- La imagen se configura en el archivo site.css -->
+        <header class="jumbotron"> <img src="Images/banner.jpg" /> </header>
+        <main>
+            <form id="form1" runat="server">
+                <div class="row">
+                    <div class="col-sm-6 table-responsive">
+                        <h1>Editar Categorias</h1>
+                        <table id="categories" class="table table-bordered tablestriped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre corto</th>
+                                    <th>
+                                        Nombre
+                                        largo
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                        <span id="message">Cargando...</span>
+                    </div>
+                    <div id="details" class="col-sm-6">
+                        <input type="hidden" id="orig_id" />
+                        <div class="form-group">
+                            <label class="control-label">ID</label>
+                            <input type="text" id="id" name="CategoryID" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Nombre Corto </label>
+                            <input type="text" id="short" name="ShortName"
+                                   class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Nombre Largo </label>
+                            <input type="text" id="long" name="LongName" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <input type="button" value="Insertar" class="btn"
+                                   onclick="insertarCategoria();" />
+                            <input type="button" value="Actualizar" class="btn"
+                                   onclick="actualizarCategoria();" />
+                            <input type="button" value="Eliminar" class="btn"
+                                   onclick="eliminarCategoria();" />
+                            <input type="button" value="Limpiar" class="btn"
+                                   onclick="limpiarTodo();" />
+                        </div>
+                    </div>
+                </div><!-- fin de la fila (Row) -->
+            </form>
+        </main>
+    </div>
+</body>
+</html>
